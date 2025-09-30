@@ -19,14 +19,26 @@ public class Registro {
 	@ManyToOne
 	private Curso curso;
 
+	@ManyToOne
+	private Usuario usuario;
+
 	public Registro() {
 
 	}
 
-	public Registro(Integer id, Curso curso) {
+	public Registro(Integer id, Curso curso, Usuario usuario) {
 		super();
 		this.id = id;
 		this.curso = curso;
+		this.usuario = usuario;
+	}
+
+	public Usuario getEstudiante() {
+		return usuario;
+	}
+
+	public void setEstudiante(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public Integer getId() {

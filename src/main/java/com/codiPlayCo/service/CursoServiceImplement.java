@@ -15,7 +15,10 @@ public class CursoServiceImplement implements ICursoService {
 	@Autowired
 	private ICursoRepository cursoRepository;
 
-	
+	public CursoServiceImplement(ICursoRepository cursoRepository) {
+		this.cursoRepository = cursoRepository;
+	}
+
 	@Override
 	public List<Curso> findAll() {
 		return cursoRepository.findAll();
@@ -30,8 +33,6 @@ public class CursoServiceImplement implements ICursoService {
 	public Curso update(Curso curso) {
 		return cursoRepository.save(curso);
 	}
-	
-	
 
 	@Override
 	public void delete(Integer id) {
@@ -42,5 +43,15 @@ public class CursoServiceImplement implements ICursoService {
 	public Optional<Curso> get(Integer id) {
 		// TODO Auto-generated method stub
 		return Optional.empty();
+	}
+
+	@Override
+	public Curso findById(Integer id) {
+		return cursoRepository.findById(id).orElse(null);
+	}
+
+	@Override
+	public List<Curso> findByAsignacionDocente(Integer asignacionDocenteId) {
+		return cursoRepository.findByAsignacionDocente_Id(asignacionDocenteId);
 	}
 }

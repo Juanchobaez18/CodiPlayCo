@@ -39,6 +39,8 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario")
 	private List<Actividades> actividades;
 
+	@OneToMany(mappedBy = "usuario")
+	private List<Registro> registro;
 	@ManyToOne
 	private Rol rol;
 
@@ -47,9 +49,10 @@ public class Usuario {
 	}
 
 	public Usuario(Integer id, String nombre, String apellido, String email, String password, String documento,
-			String tipoDocumento,  String celular, Date fechaNacimiento, Date fecharegistro,
-			Date ultimoAcceso, String activo, String avatar, List<ActividadesEstudiantes> actividadesEstudiantes,
-			List<AsignacionDocente> asignacionDocente, List<Actividades> actividades, Rol rol) {
+			String tipoDocumento, String celular, Date fechaNacimiento, Date fecharegistro, Date ultimoAcceso,
+			String activo, String avatar, List<ActividadesEstudiantes> actividadesEstudiantes,
+			List<AsignacionDocente> asignacionDocente, List<Actividades> actividades, List<Registro> registro,
+			Rol rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -58,7 +61,6 @@ public class Usuario {
 		this.password = password;
 		this.documento = documento;
 		this.tipoDocumento = tipoDocumento;
-
 		this.celular = celular;
 		this.fechaNacimiento = fechaNacimiento;
 		this.fecharegistro = fecharegistro;
@@ -68,7 +70,16 @@ public class Usuario {
 		this.actividadesEstudiantes = actividadesEstudiantes;
 		this.asignacionDocente = asignacionDocente;
 		this.actividades = actividades;
+		this.registro = registro;
 		this.rol = rol;
+	}
+
+	public List<Registro> getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(List<Registro> registro) {
+		this.registro = registro;
 	}
 
 	public Integer getId() {

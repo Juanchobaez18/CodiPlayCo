@@ -17,7 +17,11 @@ public interface ICursoService {
 	public Curso update(Curso curso);
 
 	public void delete(Integer id);
-	
+
 	public List<Curso> findAll();
+
+	Curso findById(Integer id);
+
+	List<Curso> findByAsignacionDocente(Integer asignacionDocenteId);
 
 }
