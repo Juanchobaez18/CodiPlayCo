@@ -13,6 +13,7 @@ import com.codiPlayCo.service.ICursoService;
 import com.codiPlayCo.service.IUsuarioService;
 
 @Controller
+
 public class DocenteController {
 	@Autowired
 	private final IUsuarioService usuarioService;

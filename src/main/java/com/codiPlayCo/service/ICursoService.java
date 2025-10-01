@@ -2,13 +2,10 @@ package com.codiPlayCo.service;
 
 import java.util.List;
 import java.util.Optional;
-
-import org.springframework.stereotype.Service;
-
 import com.codiPlayCo.model.Curso;
 
-@Service
 public interface ICursoService {
+
 
 	public Curso save(Curso curso);
 
@@ -25,3 +22,4 @@ public interface ICursoService {
 	List<Curso> findByAsignacionDocente(Integer asignacionDocenteId);
 
 }
+
