@@ -14,8 +14,9 @@
 <body>
 	<header>
 		<div class="logo-area">
-			<!-- Imagen desde /static/images -->
+			<a th:href="@{/CursoTrilogia1/index}">
 			<img th:src="@{/assetsCursoTrilogia/logo_letra.PNG}" alt="Logo">
+			</a>
 		</div>
 		<div class="logo-text">CodiPlayCo</div>
 		<hr class="header-divider">
@@ -26,8 +27,7 @@
 			
 		</nav>
 
-		<!-- Botón cambio de tema -->
-		<button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+		
 	</header>
 
 	<main class="web-main-playful">
