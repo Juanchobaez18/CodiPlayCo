@@ -5,11 +5,21 @@ import java.util.Optional;
 import com.codiPlayCo.model.Curso;
 
 public interface ICursoService {
-    Curso save(Curso curso);
-    List<Curso> findCursosActivos();
-    Optional<Curso> get(Integer id);
-    Curso update(Curso curso);
-    void delete(Integer id);
-    List<Curso> findAll();
-    
+
+
+	public Curso save(Curso curso);
+
+	public Optional<Curso> get(Integer id);
+
+	public Curso update(Curso curso);
+
+	public void delete(Integer id);
+
+	public List<Curso> findAll();
+
+	Curso findById(Integer id);
+
+	List<Curso> findByAsignacionDocente(Integer asignacionDocenteId);
+
 }
+

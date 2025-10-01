@@ -1,40 +1,61 @@
 package com.codiPlayCo.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.codiPlayCo.model.Curso;
+import com.codiPlayCo.model.Usuario;
+import com.codiPlayCo.service.ICursoService;
+import com.codiPlayCo.service.IUsuarioService;
 
 @Controller
-@RequestMapping("/InterfazDocente/paneldocente")
+
 public class DocenteController {
+	@Autowired
+	private final IUsuarioService usuarioService;
 
-    @GetMapping
-    public String panel() {
-        return "InterfazDocente/paneldocente";
-    }
+	public DocenteController(IUsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
 
-    @GetMapping("/tareas")
-    public String tareas() {
-        return "InterfazDocente/Tareas";
-    }
+	@GetMapping("/paneldocente")
+	public String paneldocente(Model model) {
+		List<Usuario> docentes = usuarioService.obtenerUsuariosPorRol(2); // rol_id=2
+		model.addAttribute("usuarios", docentes);
+		return "/InterfazDocente/paneldocente";
+	}
 
-    @GetMapping("/asistencia")
-    public String asistencia() {
-        return "InterfazDocente/Asistencia";
-    }
+	@GetMapping("/MisCursos")
+	public String MisCursos(Model model) {
+		Integer docenteId = 2;
+		// 2. Buscar los cursos asignados a este docente
+		List<Usuario> cursos = usuarioService.obtenerUsuariosPorRol(docenteId);
+		model.addAttribute("cursos", cursos);
+		return "InterfazDocente/MisCursos";
 
-    @GetMapping("/mensajes")
-    public String mensajes() {
-        return "InterfazDocente/Mensajes";
-    }
+	}
 
-    @GetMapping("/foros")
-    public String foros() {
-        return "InterfazDocente/Foros";
-    }
+	@GetMapping("/Tareas")
+	public String Tareas() {
+		return "InterfazDocente/Tareas";
+	}
 
-    @GetMapping("/mis-cursos")
-    public String misCursos() {
-        return "InterfazDocente/MisCursos";
-    }
+	@GetMapping("/Foros")
+	public String Foros() {
+		return "InterfazDocente/Foros";
+	}
+
+	@GetMapping("/Mensajes")
+	public String Mensajes() {
+		return "InterfazDocente/Mensajes";
+	}
+
+	@GetMapping("/Asistencia")
+	public String Asistencia() {
+		return "InterfazDocente/Asistencia";
+	}
 }
