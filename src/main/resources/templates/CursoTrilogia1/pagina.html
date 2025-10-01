@@ -13,17 +13,21 @@
 <body>
 	<header>
 		<div class="logo-area">
-			<!-- Cargar imagen desde /static/images -->
-			<img th:src="@{/assetsCursoTrilogia/logo_letra.PNG}" alt="Logo">
+			<a th:href="@{/CursoTrilogia1/index}">
+				<img th:src="@{/assetsCursoTrilogia/logo_letra.PNG}" alt="Logo">
+			</a>
 		</div>
 		<div class="logo-text" th:text="'CodiPlayCo'">CodiPlayCo</div>
 		<hr class="header-divider">
 		<nav class="main-menu">
 			<!-- Rutas dinámicas -->
 			<a th:href="@{/PanelControlUsuario/inicio}"><i class="fas fa-home"></i> Inicio</a>
-			
+
+			<a th:href="@{/CursoTrilogia1/paginas-web}">
+				<i class="fas fa-arrow-left"></i>
+			</a>
 		</nav>
-		<button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
 	</header>
 
 	<main class="pagina-dibujo-main">
@@ -43,10 +47,12 @@
 			<button type="button" onclick="dibujarForma('linea')">📏 Línea</button><br>
 
 			<button type="button" onclick="limpiarCanvas()">🧹 Limpiar</button>
-			<button type="button" onclick="guardarDibujo()">💾 Guardar</button>
+
+			<button type="button" onclick="guardarCanvas()">💾 Guardar</button>
+
 		</div>
 
-		<canvas id="canvas" width="500" height="350"></canvas>
+		<canvas id="canvas" width="600" height="350"></canvas>
 		<div id="imagenGuardada"></div>
 
 		<!-- Cargar el JS desde /static -->

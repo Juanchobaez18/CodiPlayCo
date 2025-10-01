@@ -34,13 +34,5 @@ public class CursoTrilogia1Controller {
 		return "/CursoTrilogia1/pagina";
 	}
 
-	@GetMapping("/home")
-	public String home() {
-		return "redirect:/CursoTrilogia1/";
-	}
-
-	@GetMapping("/inicio")
-	public String inicio() {
-		return "redirect:/PanelControlUsuario/inicio";
-	}
+	
 }

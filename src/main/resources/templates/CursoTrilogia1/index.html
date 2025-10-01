@@ -14,21 +14,20 @@
 
 	<header>
 		<div class="logo-area">
+
 			<img th:src="@{/assetsCursoTrilogia/logo_letra.PNG}" alt="Logo CodiPlayCo">
+
 		</div>
-		<div class="logo-text" th:text="${nombreProyecto}">CodiPlayCo</div>
+		<div class="logo-text">CodiPlayCo</div>
 		<hr class="header-divider">
 
 		<!-- Menú principal -->
 		<nav class="main-menu">
 			<a th:href="@{/PanelControlUsuario/inicio}"><i class="fas fa-home"></i> Inicio</a>
-			
+
 		</nav>
 
-		<!-- Botón de cambio de tema -->
-		<button id="theme-toggle" class="theme-toggle">
-			<i class="fas fa-moon"></i>
-		</button>
+
 	</header>
 
 	<main>
