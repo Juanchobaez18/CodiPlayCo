@@ -8,5 +8,4 @@ public interface IUsuarioService {
 
 	Usuario findById(Integer id);
 
-	List<Usuario> listarEstudiantesActivos(Integer rolEstudianteId);
 }

@@ -27,9 +27,4 @@ public class UsuarioServiceImplement implements IUsuarioService {
 		return usuarioRepository.findById(id).orElse(null);
 	}
 
-	@Override
-	public List<Usuario> listarEstudiantesActivos(Integer rolEstudianteId) {
-		// "ACTIVO" según BD
-		return usuarioRepository.findByRolIdAndActivo(rolEstudianteId, "ACTIVO");
-	}
 }

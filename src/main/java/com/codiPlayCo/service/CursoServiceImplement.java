@@ -52,6 +52,6 @@ public class CursoServiceImplement implements ICursoService {
 
 	@Override
 	public List<Curso> findByAsignacionDocente(Integer asignacionDocenteId) {
-		return cursoRepository.findByAsignacionDocente_Id(asignacionDocenteId);
+		return cursoRepository.findByAsignacionDocenteId(asignacionDocenteId);
 	}
 }

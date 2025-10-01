@@ -18,5 +18,5 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 	List<Usuario> findByRolId(Integer rolId);
 
-	List<Usuario> findByRolIdAndActivo(Integer rolId, String activo);
+	
 }

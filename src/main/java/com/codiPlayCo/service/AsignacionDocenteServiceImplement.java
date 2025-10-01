@@ -1,6 +1,6 @@
 package com.codiPlayCo.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ public class AsignacionDocenteServiceImplement implements IAsignacionDocenteServ
 	private IAsignacionDocenteRepository asignacionDocenteRepository;
 
 	@Override
-	public List<AsignacionDocente> findByUsuarioId(Integer usuarioId) {
-		return asignacionDocenteRepository.findByUsuarioId(usuarioId);
+	public Optional<AsignacionDocente> findByUsuarioId(Integer id) {
+		return asignacionDocenteRepository.findById(id);
 	}
 
 	public AsignacionDocenteServiceImplement(IAsignacionDocenteRepository repo) {
@@ -24,7 +24,7 @@ public class AsignacionDocenteServiceImplement implements IAsignacionDocenteServ
 	}
 
 	@Override
-	public List<AsignacionDocente> findByDocente(Integer docenteId) {
-		return asignacionDocenteRepository.findByUsuarioId(docenteId);
+	public Optional<AsignacionDocente> findByDocente(Integer id) {
+		return asignacionDocenteRepository.findById(id);
 	}
 }

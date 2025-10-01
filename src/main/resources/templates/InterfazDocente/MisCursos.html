@@ -23,8 +23,7 @@
 		<a th:href="@{/Tareas}"><span class="nav-icon"><i class="fa-solid fa-clipboard-list"></i></span>Tareas</a>
 		<a th:href="@{/Foros}"><span class="nav-icon"><i class="fa-solid fa-comments"></i></span>Foros</a>
 		<a th:href="@{/Mensajes}"><span class="nav-icon"><i class="fa-solid fa-envelope"></i></span>Mensajes</a>
-		<a th:href="@{/Asistencia}"><span class="nav-icon"><i
-					class="fa-solid fa-calendar-check"></i></span>Asistencia</a>
+		<a th:href="@{/Asistencia}"><span class="nav-icon"><i class="fa-solid fa-calendar-check"></i></span>Asistencia</a>
 	</nav>
 	<div class="main-layout">
 		<header>
@@ -102,12 +101,16 @@
 		<div class="container">
 			<div class="panel">
 				<h2><span class="panel-icon"><i class="fa-solid fa-chart-line"></i></span> Progreso de Estudiantes</h2>
+				<form method="get" th:action="@{/MisCursos}">
 				<label for="curso">Seleccionar Curso:</label>
 				<select id="curso">
-					<option th:each="asignaciondocentes : ${asignaciones}" th:value="${asignaciondocentes.id}"
-						th:text="${asignaciondocentes.cursoAsirgnado}">
+
+					<option th:each="asignaciondocente: ${cursoAsirgnado}"
+					        th:value="${asignacindocente.idCurso}"
+					        th:text="${asignaciondocente.cursoAsirgnado}">
 					</option>
 				</select>
+				</form>
 				<div class="progreso-estudiante">
 					<p>Juan Pérez - 75%</p>
 					<div class="barra-progreso">
